@@ -4,6 +4,7 @@ RUN apt-get update && \
 	apt-get install -y apt-utils aptitude && \
 	apt-get -y upgrade && \
 	apt-get install -y \
+		fish \
 		dnsutils \
 		curl \
 		less \
@@ -13,6 +14,6 @@ RUN apt-get update && \
 		htop
 
 RUN update-alternatives --set editor /usr/bin/vim.nox
-RUN cp /etc/skel/.bashrc /root/.bashrc
+RUN usermod -s /usr/bin/fish root
 
 WORKDIR /root
