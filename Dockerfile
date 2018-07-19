@@ -14,6 +14,5 @@ RUN apt-get update && \
 		htop
 
 RUN update-alternatives --set editor /usr/bin/vim.nox
-RUN usermod -s /usr/bin/fish root
 
 WORKDIR /root
