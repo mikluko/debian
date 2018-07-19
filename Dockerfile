@@ -4,7 +4,6 @@ RUN apt-get update && \
 	apt-get install -y apt-utils aptitude && \
 	apt-get -y upgrade && \
 	apt-get install -y \
-		fish \
 		dnsutils \
 		curl \
 		less \
