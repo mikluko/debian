@@ -1,20 +1,23 @@
 # syntax=docker/dockerfile:1.4
 FROM debian:latest
 
-RUN apt-get update && \
-	apt-get install -y apt-utils aptitude && \
-	apt-get -y upgrade && \
-	apt-get install -y \
-		dumb-init \
-		dnsutils \
-		curl \
-		less \
-		man-db \
-		zsh \
-      	zsh-autosuggestions \
-      	zsh-syntax-highlighting \
-		vim-nox \
-		htop
+ARG DEBIAN_FRONTEND=noninteractive
+
+RUN --mount=type=cache,target=/var/lib/apt,sharing=locked \
+    rm -f /etc/apt/apt.conf.d/docker-clean && \
+    apt-get update && \
+    apt-get -y upgrade && \
+    apt-get install -y \
+        dumb-init \
+        dnsutils \
+        curl \
+        less \
+        man-db \
+        zsh \
+        zsh-autosuggestions \
+        zsh-syntax-highlighting \
+        vim-nox \
+        htop
 
 RUN update-alternatives --set editor /usr/bin/vim.nox
 
