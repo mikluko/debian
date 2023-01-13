@@ -26,6 +26,6 @@ RUN usermod -s /usr/bin/zsh root
 
 ADD zshrc /root/.zshrc
 
-ENTRYPOINT ["/usr/bin/dumb-init"]
+ENTRYPOINT ["/usr/bin/dumb-init", "--"]
 
-CMD ["zsh"]
+CMD ["sleep", "infinity"]
