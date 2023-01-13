@@ -11,6 +11,7 @@ RUN --mount=type=cache,target=/var/lib/apt,sharing=locked \
         dumb-init \
         dnsutils \
         curl \
+        inetutils-ping \
         less \
         man-db \
         zsh \
