@@ -1,3 +1,4 @@
+# syntax=docker/dockerfile:1.4
 FROM debian:latest
 
 RUN apt-get update && \
